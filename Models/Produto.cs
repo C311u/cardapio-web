@@ -6,12 +6,12 @@ namespace CardapioWeb.Models
     [Table("Produtos")]
     public class Produto
     {
-        [Key]
+        [Key] //identifica como chave primaria
         public int Id { get; set; }
 
-        [Display(Name ="Nome do produto")]
-        [Required(ErrorMessage ="Campo obrigatório")]
-        [MinLength(5, ErrorMessage ="O nome do produto deve ter no mínimo {0} caracteres")]
+        [Display(Name ="Nome do produto")] //dar nome ao campo
+        [Required(ErrorMessage ="Campo obrigatório")] //faz com que o campo seja de preenchimento obrigatório
+        [MinLength(5, ErrorMessage ="O nome do produto deve ter no mínimo {0} caracteres")] //define quantidade mínima de caracteres
         public string Nome { get; set; }
 
         [Display(Name = "Descrição curta do produto")]
@@ -29,6 +29,6 @@ namespace CardapioWeb.Models
         public bool Produto_Preferido { get; set; }
         public bool Em_Estoque { get; set; }
 
-        public virtual Categoria Categoria { get; set; }
+        public virtual Categoria Categoria { get; set; } //gera chave estrangeira, produto deriva de categoria
     }
 }
