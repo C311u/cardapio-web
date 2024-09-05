@@ -15,6 +15,7 @@ namespace CardapioWeb
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
             );
             builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>(); //vai direcionar o método para ser executado na categoria repository
             var app = builder.Build();
 
 
